@@ -21,15 +21,26 @@ public class Janken2 {
 		while(kati<3 && make<3) {
 			int x = s.nextInt();
 			int y = r.nextInt(3);
+			System.out.println(z[y]);
 			
-			System.out.print(z[y]);
-			
+			if(y + 1 == x) {
+				System.out.println("あいこ");
+			}else if(y + 1  == 1 && x == 3 || y + 1  == 2 && x == 1 || y + 1  == 3 && x == 2) {
+				System.out.println("勝ち");
+				kati +=1;
+			}else {
+				System.out.println("負け");
+				make +=1;
+			}
 			
 			}
+		System.out.println(kati + "勝" + make + "敗");
+		if(kati == 3) {
+			String[] omikuji = {"大吉","中吉","小吉","吉","凶"};
+			System.out.print(omikuji[r.nextInt(5)]);
+		}
 		}
 	
-	System.out.println(kati + "勝" + make + "敗");
-
-	}
+	
 
 }
